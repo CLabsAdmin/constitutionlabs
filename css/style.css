@@ -91,11 +91,11 @@ a:hover { text-decoration: underline; }
 .pathway-card { position: relative; padding: 2.75rem 2rem 2rem; display: flex; flex-direction: column; gap: 0.75rem; transition: filter 0.2s; color: var(--white); overflow: hidden; }
 .pathway-card:hover { filter: brightness(1.08); text-decoration: none; }
 
-/* Alternating slate / rust — balanced 2+2 */
+/* Alternating slate / rust */
 .pathway-card:nth-child(1) { background: var(--slate); }
 .pathway-card:nth-child(2) { background: var(--rust); }
-.pathway-card:nth-child(3) { background: var(--rust); }
-.pathway-card:nth-child(4) { background: var(--slate); }
+.pathway-card:nth-child(3) { background: var(--slate); }
+.pathway-card:nth-child(4) { background: var(--rust); }
 
 /* Watermark numeral */
 .pathway-card::before { content: attr(data-num); position: absolute; bottom: -1rem; right: 0.75rem; font-family: var(--font-serif); font-size: 8rem; font-weight: 700; opacity: 0.1; line-height: 1; pointer-events: none; color: var(--white); }
@@ -149,3 +149,94 @@ a:hover { text-decoration: underline; }
 .text-center { text-align: center; }
 .mt-2 { margin-top: 1rem; }
 .mt-3 { margin-top: 2rem; }
+
+
+/* ==============================================
+   ABOUT PAGE
+   ============================================== */
+
+/* PAGE HERO (compact variant of home hero) */
+.page-hero { background: var(--white); padding: 4rem 1.5rem 3.25rem; text-align: center; border-top: 4px solid var(--rust); border-bottom: 4px solid var(--slate); }
+.page-hero-inner { max-width: 760px; margin: 0 auto; }
+.page-hero .hero-eyebrow { font-size: 1.5rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--rust); margin-bottom: 0.6rem; line-height: 1.2; }
+.page-hero h1 { color: var(--slate); font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 1.25rem; }
+.page-hero .lede { font-size: 1.2rem; color: var(--gray-mid); line-height: 1.7; max-width: 620px; margin: 0 auto; }
+.page-hero .lede strong { color: var(--ink); font-weight: 600; }
+
+/* GENERIC ABOUT SECTION */
+.about-section { padding: 4.5rem 0; border-top: 3px solid var(--slate); border-bottom: 3px solid var(--rust); }
+.about-section.alt { background: var(--white); }
+.about-section.parchment { background: var(--parchment); }
+.about-section .container { max-width: 860px; }
+.about-section .eyebrow { font-size: 1.5rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--rust); margin-bottom: 0.35rem; line-height: 1.2; }
+.about-section h2 { color: var(--ink); font-size: 1.2rem; margin-bottom: 1.25rem; }
+.about-prose p { font-size: 1.05rem; color: var(--ink); line-height: 1.85; margin-bottom: 1.25rem; }
+.about-prose p:last-child { margin-bottom: 0; }
+.about-prose strong { font-weight: 600; }
+
+/* MISSION STATEMENT FEATURE */
+.mission-feature { background: var(--white); border-left: 4px solid var(--slate); padding: 1.75rem 2rem; margin: 0 0 2rem; border-radius: 0 var(--radius) var(--radius) 0; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+.mission-feature p { font-family: var(--font-serif); font-size: 1.3rem; font-style: italic; line-height: 1.5; color: var(--ink); margin: 0; }
+.mission-methods { display: grid; gap: 1.25rem; margin-top: 2rem; }
+.mission-method { display: flex; gap: 1rem; align-items: flex-start; }
+.mission-method .num { font-family: var(--font-serif); font-size: 1.6rem; font-weight: 700; color: var(--slate); line-height: 1; flex-shrink: 0; width: 2rem; }
+.mission-method p { margin: 0; font-size: 1rem; line-height: 1.7; }
+.mission-note { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--gray-light); font-size: 0.97rem; color: var(--gray-mid); line-height: 1.75; }
+
+/* COMMITMENTS GRID */
+.commitments-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+.commitment-card { background: var(--white); border-top: 4px solid var(--slate); border-radius: 0 0 var(--radius) var(--radius); padding: 1.75rem; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+.commitment-card:nth-child(even) { border-top-color: var(--rust); }
+.commitment-card h3 { font-size: 1.1rem; color: var(--ink); margin-bottom: 0.7rem; }
+.commitment-card p { font-size: 0.95rem; color: var(--gray-mid); line-height: 1.7; }
+.commitment-card .exclude { display: block; margin-top: 0.75rem; font-size: 0.88rem; color: var(--ink); }
+
+/* WORK / INITIATIVES */
+.work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+.work-card { padding: 1.5rem 0; }
+.work-card h3 { font-size: 1.08rem; color: var(--slate); margin-bottom: 0.5rem; }
+.work-card p { font-size: 0.95rem; color: var(--gray-mid); line-height: 1.7; }
+.work-card .status { display: inline-block; margin-top: 0.7rem; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--rust); }
+
+/* BOARD */
+.board-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2.5rem 2rem; margin-top: 2.75rem; }
+.board-card { text-align: center; }
+.board-photo { width: 132px; height: 132px; border-radius: 50%; margin: 0 auto 1.1rem; display: block; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.board-name { font-family: var(--font-serif); font-size: 1.15rem; font-weight: 700; color: var(--ink); margin-bottom: 0.2rem; }
+.board-role { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--rust); margin-bottom: 0.75rem; }
+.board-bio { font-size: 0.92rem; color: var(--gray-mid); line-height: 1.65; max-width: 320px; margin: 0 auto; }
+.board-note { text-align: center; font-size: 0.95rem; color: var(--gray-mid); font-style: italic; margin-top: 2.75rem; max-width: 640px; margin-left: auto; margin-right: auto; }
+
+/* CLOSING CTA */
+.about-cta { background: var(--ink); color: var(--white); text-align: center; padding: 4rem 1.5rem; border-top: 4px solid var(--rust); }
+.about-cta h2 { color: var(--white); margin-bottom: 1rem; }
+.about-cta p { color: rgba(255,255,255,0.85); font-size: clamp(1.25rem, 2.5vw, 1.6rem); max-width: 640px; margin: 0 auto 2rem; line-height: 1.55; }
+
+@media (max-width: 768px) {
+  .commitments-grid, .work-grid, .board-grid { grid-template-columns: 1fr; }
+  .about-section { padding: 3rem 0; }
+}
+
+
+/* ABOUT — GUARDRAILS (3-up, wider container) */
+.about-section.guardrails .container { max-width: var(--max-width); }
+.guardrails .about-prose { max-width: 680px; margin: 0 auto; text-align: center; }
+.guardrails-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
+.mission-method .method-links { display: block; font-size: 0.85rem; color: var(--gray-mid); margin-top: 0.4rem; }
+@media (max-width: 860px) { .guardrails-grid { grid-template-columns: 1fr; } }
+
+
+/* ABOUT — AMENDMENT TIMELINE FIGURE */
+.timeline-figure { margin: 2.5rem 0; background: var(--white); border-top: 4px solid var(--slate); border-radius: 0 0 var(--radius) var(--radius); padding: 1.75rem 1.75rem 1.5rem; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+.timeline-figure .timeline-title { font-family: var(--font-serif); font-size: 1.25rem; color: var(--ink); margin: 0 0 0.15rem; line-height: 1.3; }
+.timeline-figure .timeline-sub { font-size: 0.85rem; color: var(--gray-mid); margin: 0 0 1.25rem; letter-spacing: 0.02em; }
+.timeline-scroll { overflow-x: auto; }
+.timeline-scroll svg { display: block; width: 100%; min-width: 680px; height: auto; }
+.timeline-figure figcaption { font-size: 0.9rem; color: var(--gray-mid); line-height: 1.6; margin-top: 1.1rem; font-style: italic; }
+
+
+/* ABOUT — WHAT MAKES US DIFFERENT (two-column with art) */
+.different-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 2.5rem; align-items: center; }
+.different-art { border-top: 4px solid var(--slate); border-radius: 0 0 var(--radius) var(--radius); overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.05); background: var(--white); }
+.different-art svg, .different-art img { display: block; width: 100%; height: auto; }
+@media (max-width: 768px) { .different-grid { grid-template-columns: 1fr; gap: 2rem; } }
