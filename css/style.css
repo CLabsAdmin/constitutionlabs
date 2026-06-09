@@ -240,3 +240,97 @@ a:hover { text-decoration: underline; }
 .different-art { border-top: 4px solid var(--slate); border-radius: 0 0 var(--radius) var(--radius); overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.05); background: var(--white); }
 .different-art svg, .different-art img { display: block; width: 100%; height: auto; }
 @media (max-width: 768px) { .different-grid { grid-template-columns: 1fr; gap: 2rem; } }
+
+
+/* ============================================== 
+   RESOURCES PAGE
+   ============================================== */
+
+/* Political-lean key */
+.lean-key { display: flex; flex-wrap: wrap; gap: 0.9rem 1.4rem; justify-content: center; margin: 1.75rem auto 0; padding: 1rem 1.25rem; max-width: 740px; background: var(--parchment); border-radius: var(--radius); }
+.lean-key-item { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; color: var(--gray-mid); }
+.lean-stars { letter-spacing: 1px; font-size: 0.95rem; line-height: 1; }
+.s-blue { color: var(--slate); }
+.s-red { color: var(--rust); }
+.s-white { color: #ffffff; -webkit-text-stroke: 1px #b0a99c; }
+
+/* Curated resource listings */
+.res-list { display: grid; gap: 1.1rem; margin-top: 1.75rem; }
+.res-item { background: var(--white); border-left: 3px solid var(--slate); border-radius: 0 var(--radius) var(--radius) 0; padding: 1rem 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+.res-head { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.25rem; }
+.res-name { font-weight: 600; color: var(--ink); }
+.res-desc { font-size: 0.93rem; color: var(--gray-mid); line-height: 1.6; }
+
+/* Glossary */
+.glossary-list { margin-top: 1.5rem; display: grid; gap: 1.1rem; }
+.glossary-term { font-weight: 600; color: var(--slate); }
+.glossary-def { font-size: 0.97rem; color: var(--ink); line-height: 1.65; margin-top: 0.1rem; }
+
+/* Amendment list */
+.amendment-list { margin-top: 1.75rem; display: grid; grid-template-columns: 1fr; gap: 1.1rem; }
+.amendment-item { display: grid; grid-template-columns: 2.6rem 1fr; gap: 0.7rem; align-items: start; }
+.amd-num { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 700; color: var(--slate); line-height: 1.05; }
+.amd-num.repealed { color: var(--rust); }
+.amd-head { font-weight: 600; color: var(--ink); font-size: 0.95rem; }
+.amd-year { color: var(--gray-mid); font-weight: 400; }
+.amd-desc { font-size: 0.9rem; color: var(--gray-mid); line-height: 1.55; margin-top: 0.1rem; }
+
+/* In-development placeholder */
+.placeholder-note { margin-top: 1.5rem; padding: 1.25rem 1.5rem; border: 1px dashed #cfc8ba; border-radius: var(--radius); background: var(--parchment); font-size: 0.95rem; color: var(--gray-mid); line-height: 1.65; font-style: italic; }
+
+/* Subsections within a section */
+.subsection { margin-top: 2.75rem; }
+.subsection h3 { font-size: 1.15rem; color: var(--ink); margin-bottom: 0.4rem; }
+
+/* Workshop teaser */
+.workshop-teaser { background: var(--slate); color: #fff; border-radius: var(--radius); padding: 2.25rem; text-align: center; }
+.workshop-teaser h3 { color: #fff; font-size: 1.35rem; margin-bottom: 0.6rem; }
+.workshop-teaser p { color: rgba(255,255,255,0.85); max-width: 580px; margin: 0 auto 1.5rem; line-height: 1.7; }
+
+@media (max-width: 768px) { .amendment-list { grid-template-columns: 1fr; } }
+
+
+/* Tease-and-expand (details/summary) */
+details.expand > summary { cursor: pointer; list-style: none; }
+details.expand > summary::-webkit-details-marker { display: none; }
+details.expand > summary::marker { content: ""; }
+.about-prose .teaser { margin-bottom: 0; line-height: 1.8; }
+.more-cue { display: inline-block; margin-left: 0.4rem; font-size: 0.9rem; font-weight: 600; color: var(--slate); white-space: nowrap; }
+.more-cue::after { content: "more \203A"; }
+details.expand[open] > summary .more-cue::after { content: "less \2039"; }
+details.expand > summary:hover .more-cue { text-decoration: underline; }
+.expand-body { margin-top: 1.4rem; }
+details.expand.sub { margin-top: 1.5rem; padding-top: 1.4rem; border-top: 1px solid var(--gray-light); }
+details.expand.sub > summary h3 { font-size: 1.12rem; color: var(--ink); margin-bottom: 0.3rem; }
+.about-prose .sub-teaser { font-size: 0.97rem; color: var(--gray-mid); }
+details.expand.sub .expand-body { margin-top: 1rem; }
+
+
+/* Detailed amendment timeline (vertical, responsive) */
+.amd-timeline { margin-top: 1.75rem; position: relative; padding-left: 1.85rem; }
+.amd-timeline::before { content: ""; position: absolute; left: 6px; top: 8px; bottom: 8px; width: 2px; background: var(--gray-light); }
+.amd-era { position: relative; padding-bottom: 1.7rem; }
+.amd-era:last-child { padding-bottom: 0; }
+.amd-era-node { position: absolute; left: -1.8rem; top: 4px; width: 13px; height: 13px; border-radius: 50%; background: var(--slate); box-shadow: 0 0 0 3px var(--white); }
+.amd-era-node.today { background: var(--rust); }
+.amd-gap { font-size: 0.74rem; color: var(--gray-mid); font-style: italic; margin-bottom: 0.25rem; }
+.amd-gap.drought { color: var(--rust); font-weight: 600; font-style: normal; }
+.amd-era-title { font-family: var(--font-serif); font-size: 1.05rem; color: var(--ink); margin-bottom: 0.55rem; }
+.amd-era-years { font-size: 0.82rem; color: var(--gray-mid); margin-left: 0.45rem; }
+.amd-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.amd-chip { display: inline-flex; align-items: baseline; gap: 0.25rem; background: var(--slate); color: #fff; font-size: 0.78rem; font-weight: 600; padding: 0.25rem 0.6rem; border-radius: 999px; }
+.amd-chip.repealed { background: var(--rust); }
+.amd-chip .yr { font-weight: 400; font-size: 0.72rem; opacity: 0.85; }
+
+
+/* Section 3 — grouped resource buckets */
+.res-group { margin-top: 2rem; }
+.res-group-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate); margin: 0 0 0.9rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--gray-light); }
+.res-item { border-left-color: #cfc8ba; }
+.res-item.lean-red { border-left-color: var(--rust); }
+.res-item.lean-blue { border-left-color: var(--slate); }
+a.res-name { text-decoration: none; }
+a.res-name:hover { color: var(--slate); text-decoration: underline; }
+
+/* Section 5 — "judge for yourself" marker */
+.lean-q { color: var(--gray-mid); font-weight: 700; }
